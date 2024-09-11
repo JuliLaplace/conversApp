@@ -34,4 +34,14 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+
+ion-content.contenido-fondo{
+    --background: url("https://img.freepik.com/foto-gratis/fondo-textura-hormigon-rosa_53876-63606.jpg");
+
+}
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
