@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Sakura App</string>
-    <string name="title_activity_main">Sakura App</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">ConversApp</string>
+    <string name="title_activity_main">ConversApp</string>
+    <string name="package_name">io.conservapp.app</string>
+    <string name="custom_url_scheme">io.conservapp.app</string>
 </resources>

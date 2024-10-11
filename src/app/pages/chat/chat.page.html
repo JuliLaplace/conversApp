@@ -1,0 +1,29 @@
+<!-- <div class="contenedor"> -->
+  <div class="contenedor-chat" [ngClass]="{'chat1': cursoActual === '4A', 'chat2': cursoActual === '4B'}">
+
+    <div *ngIf="cursoActual=='4A'" class="contenido-chat ">
+
+      <div *ngFor="let m of cargarMensajesFiltrados()"
+        [ngClass]="m.user == sesion.getUsuario() ? 'mensaje-chat-propio' : 'mensaje-chat'">
+        <p class="hora-mensaje">{{(m.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm'}}</p>
+        <p class="mensaje">{{m.user == sesion.getUsuario() ? 'Yo' : m.user.split('@')[0]}}: {{m.mensaje}}</p>
+      </div>
+
+    </div>
+
+    <div *ngIf="cursoActual=='4B'" class="contenido-chat ">
+
+      <div *ngFor="let m of cargarMensajesFiltrados()"
+        [ngClass]="m.user == sesion.getUsuario() ? 'mensaje-chat-propio' : 'mensaje-chat'">
+        <p class="hora-mensaje">{{(m.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm'}}</p>
+        <p class="mensaje">{{m.user == sesion.getUsuario() ? 'Yo' : m.user}} : {{m.mensaje}}</p>
+      </div>
+
+    </div>
+    <div class="input">
+      <input type="text" [(ngModel)]="mensaje" name="mensaje" maxlength="21" >
+      <button class="btn-chat" (click)="enviarMensaje()">Enviar</button>
+    </div>
+  </div>
+
+<!-- </div> -->

@@ -8,6 +8,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { IonicModule } from '@ionic/angular';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -29,6 +30,9 @@ bootstrapApplication(AppComponent, {
     ), 
     provideAuth(
       () => getAuth()
+    ), 
+    provideFirestore(
+      () => getFirestore()
     ),
   ],
 });

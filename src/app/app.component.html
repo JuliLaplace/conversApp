@@ -1,9 +1,30 @@
 <ion-app>
-  <ion-menu contentId="main-content" menuId="main-menu">
-    <app-menu></app-menu>
-  </ion-menu>
-  <app-header></app-header>
-  <ion-content id="main-content" class="contenido-fondo">
-    <ion-router-outlet></ion-router-outlet>
-  </ion-content>
+  <ion-header *ngIf="splashService.showHeaderFooter">
+    <ion-toolbar>
+        <div class="contenedor-boton" *ngIf="sesion.sesionActiva()">
+
+          <div class="volver-inicio" >
+            <ion-button class="btn" *ngIf="data.curso!=''" (click)="volverInicio()" >
+              <p class="volver">Volver al inicio</p>
+            </ion-button>
+          </div>
+          <div class="cierre-sesion">
+            <ion-button class="btn" (click)="cerrarSesion()">
+              <ion-icon name="power-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-content id="main-content"  class="contenido-fondo">
+      <ion-router-outlet [animated]="false"></ion-router-outlet>
+    </ion-content>
+
+    <ion-footer *ngIf="splashService.showHeaderFooter">
+      <ion-toolbar>
+        <ion-title [style]=" 'text-align:center; bordered' ">ConversApp®</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+
 </ion-app>

@@ -1,25 +1,18 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Sakura App',
-  webDir: 'www', 
+  appId: 'io.conservapp.app',
+  appName: 'ConversApp',
+  webDir: 'www',
   plugins: {
     SplashScreen: {
-      launchShowDuration: 3000,
-      launchAutoHide: true,
-      launchFadeOutDuration: 3000,
-      backgroundColor: "#fceaf0",
-      androidSplashResourceName: "splash",
-      androidScaleType: "CENTER_CROP",
-      showSpinner: true,
-      androidSpinnerStyle: "large",
-      iosSpinnerStyle: "small",
-      spinnerColor: "#999999",
-      splashFullScreen: true,
+      launchShowDuration: 1500,
+      "launchAutoHide": true,
+      "androidScaleType": "CENTER_CROP",
       splashImmersive: true,
-      layoutName: "launch_screen",
-      useDialog: true,
+      splashFullScreen: true,
+      androidSplashResourceName: "splash",
+      "useDialog": false,
     },
   },
 };

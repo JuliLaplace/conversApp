@@ -1,0 +1,219 @@
+.contenedor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+@keyframes fadeBackground {
+  0% {
+    background-color: #b5abdf; /* Color inicial */
+  }
+  100% {
+    background-color: transparent; /* Color final */
+  }
+}
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // background: transparent;
+  background: #b5abdf; 
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: fadeBackground 3s ease forwards; /* Transición de color */
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+.img-logo {
+  width: 200px;
+  height: 238px;
+  margin-top: 11px;
+  animation: fade-out 2s ease-out both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes vibrate-2 {
+  0% {
+
+    transform: translate(0);
+  }
+
+  20% {
+
+    transform: translate(2px, -2px);
+  }
+
+  40% {
+
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+
+    transform: translate(-2px, 2px);
+  }
+
+  80% {
+
+    transform: translate(-2px, -2px);
+  }
+
+  100% {
+
+    transform: translate(0);
+  }
+}
+
+.img-logo2 {
+  width: 200px;
+  height: 238px;
+  margin-top: 11px;
+  position: absolute;
+  animation: fade-in 2s ease-out both, vibrate-2 0.3s linear 1.5s infinite both;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(20, 20, 20); }
+}
+.nombre {
+  position: absolute;
+  text-align: center;
+  bottom: 50px;
+  font-size: 50px;
+  font-weight: 900;
+  // overflow: hidden; 
+  // border-right: .1em solid rgb(0, 0, 0); 
+  // white-space: nowrap; 
+  // margin: 20px auto;
+  // letter-spacing: .15em;
+  // animation: 
+  //   typing 3.5s steps(40, end),
+  //   blink-caret .75s step-end infinite;
+
+}
+.contenido-nombre{
+  position: relative;
+  text-align:left;
+  overflow: hidden; /* Oculta el texto no mostrado hasta que la animación lo revela */
+  border-right: .1em solid black; /* Cursor de *typewriter* */
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
+  margin: 0 auto; /* Centrado horizontal */
+  letter-spacing: .15em; /* Espaciado entre letras */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  font-size: 50px; /* Ajusta el tamaño del texto si es necesario */
+
+  color: aliceblue;
+  margin: 10px 0px 0px 0px;
+  text-shadow: 2px 0 var(--border), -2px 0 var(--border), 0 2px var(--border), 0 -2px var(--border),
+  1px 1px var(--border), -1px -1px var(--border), 1px -1px var(--border), -1px 1px var(--border);
+}
+:host {
+--border: black;
+}
+
+
+
+
+.iconos {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 160px;
+
+}
+
+.icono {
+  width: 64px; /* Ancho de las imágenes */
+  height: 64px; /* Alto de las imágenes */
+  margin: 0 10px; /* Espaciado entre imágenes */
+  opacity: 0; /* Comenzar oculto */
+  transform: translateY(-20px); /* Comenzar desplazado hacia arriba */
+  animation: pop-up 1s ease forwards, bounce 1s ease-in-out 1.5s infinite;; 
+}
+
+/* Animación de pop-up */
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Comienza fuera de la vista */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px); /* Mueve hacia abajo ligeramente */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px); 
+  }
+  60% {
+    transform: translateY(-10px); 
+  }
+}
+
+/* Aplica un retraso a cada imagen */
+.icono:nth-child(1) {
+  animation-delay: 0.4s; /* Retraso para la primera imagen */
+}
+
+.icono:nth-child(2) {
+  animation-delay: 0.6s; /* Retraso para la segunda imagen */
+}
+
+.icono:nth-child(3) {
+  animation-delay: 0.8s; /* Retraso para la tercera imagen */
+  
+}
+.icono:nth-child(4) {
+  animation-delay: 1.0s; /* Retraso para la cuarta imagen */
+}
+

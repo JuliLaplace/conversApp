@@ -1,0 +1,31 @@
+<div class="container-formulario">
+  
+    <h1 class="bordered">ConversApp</h1>
+  
+  <div class="login-form">
+    <ion-item>
+      <ion-input placeholder="Ingrese correo electrónico" [clearOnEdit]="true" type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Ingrese contraseña"  [clearOnEdit]="true" type="password" [(ngModel)]="pwd" required></ion-input>
+    </ion-item>
+
+    <ion-button class="btn" (click)="login()">COMENZAR</ion-button>
+  </div>
+  <div class="error">
+    <p class="error-login" [class.show]="errorFlag">{{errorMsj}}</p>
+  </div>
+
+  
+  <div class="btn-ingreso">
+    <ion-button class="btn-persona"><img src="../../../assets/icon/usuario1.png" (click)="loguearUsuario('admin')"></ion-button>
+    <ion-button class="btn-persona"><img src="../../../assets/icon/usuario2.png"  (click)="loguearUsuario('usuario')"></ion-button>
+    <ion-button class="btn-persona"><img src="../../../assets/icon/usuario3.png" (click)="loguearUsuario('invitado')"></ion-button>
+  </div>
+
+
+  <div class="contenedor-img">
+    <img src="../../../assets/img/logo.png" alt="logo conversapp">
+  </div>
+</div>
